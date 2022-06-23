@@ -1,0 +1,8 @@
+server:
+  port: 8082
+spring:
+  jackson:
+    default-property-inclusion: NON_NULL
+    visibility:
+      field: non_private
+#    property-naming-strategy: SNAKE_CASE

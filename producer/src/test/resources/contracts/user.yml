@@ -1,0 +1,13 @@
+description: Sample contract
+name: userContract
+request:
+  url: /user
+  method: GET
+response:
+  status: 200
+  headers:
+    Content-Type: application/json
+  body:
+    lastName: yamamoto
+    firstName: Bob
+    age: 32
