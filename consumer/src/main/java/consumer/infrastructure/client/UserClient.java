@@ -11,9 +11,24 @@ public class UserClient {
 
     private final RestTemplate restTemplate;
 
-    UserClient() {
-        this.restTemplate = new RestTemplateBuilder().build();
+    UserClient(RestTemplateBuilder restTemplateBuilder) {
+        this.restTemplate =
+                    restTemplateBuilder
+                .build();
     }
+
+//    UserClient() {
+//        ObjectMapper mapper = new ObjectMapper();
+//        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.NON_PRIVATE);
+//        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+//        converter.setObjectMapper(mapper);
+//
+    // TODO NG RestTemplateBuilder を new してはいけない
+//        this.restTemplate =
+//                new RestTemplateBuilder()
+//                        .messageConverters(converter)
+//                        .build();
+//    }
 
     public User user() {
         ResponseEntity<User> response = restTemplate.getForEntity("http://localhost:8082/user", User.class);

@@ -6,3 +6,4 @@ spring:
     visibility:
       field: non_private
 #    property-naming-strategy: SNAKE_CASE
+#    property-naming-strategy: KEBAB_CASE
